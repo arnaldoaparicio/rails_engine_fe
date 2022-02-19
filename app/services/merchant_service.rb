@@ -11,6 +11,6 @@ class MerchantService
 
   def self.all_merchant_items(merchant_id)
     response = connection.get("api/v1/merchants/#{merchant_id}/items")
-    JSON.parse(response.body, symbolize_names: true)
+    JSON.parse(response.body, symbolize_names: true)[:data]
   end
 end
